@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase";
 import Navbar from "../../components/Navbar/Navbar";
-
 import ChatBot from "../../components/Chatbot/ChatBot";
 
 // instead of adding the Sidebar component to every page, we can add it only once to the PageLayout component and wrap the children with it. This way, we can have a sidebar on every page except the AuthPage.
@@ -14,6 +13,7 @@ const PageLayout = ({ children }) => {
   const [user, loading] = useAuthState(auth);
   const canRenderSidebar = pathname !== "/auth" && user;
   const canRenderNavbar = !user && !loading && pathname !== "/auth";
+  const canRenderChatBot = pathname !== "/auth";
 
   const checkingUserIsAuth = !user && loading;
   if (checkingUserIsAuth) return <PageLayoutSpinner />;
@@ -39,9 +39,11 @@ const PageLayout = ({ children }) => {
           {children}
         </Box>
       </Flex>
-      <Box position="sticky" bottom="0" right="0" m="4">
-        <ChatBot />
-      </Box>
+      {canRenderChatBot ? (
+        <Box position="sticky" bottom="0" right="0" m="4">
+          <ChatBot />
+        </Box>
+      ) : null}
     </Box>
   );
 };
