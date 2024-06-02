@@ -1,6 +1,6 @@
 import { Box, Image } from "@chakra-ui/react";
-import PostFooter from "./PostFooter";
 import PostHeader from "./PostHeader";
+import PostFooter from "./PostFooter";
 import useGetUserProfileById from "../../hooks/useGetUserProfileById";
 
 const FeedPost = ({ post }) => {

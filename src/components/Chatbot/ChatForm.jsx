@@ -14,12 +14,12 @@ import {
     const mess = [
       {
         id: 1,
-        text: "can you ask me anything?",
+        text: "Tôi có thể giúp gì cho bạn?",
         isBot: true,
       },
       {
         id: 2,
-        text: "How can I help you today?",
+        text: "...?",
         isBot: false,
       },
     ];
