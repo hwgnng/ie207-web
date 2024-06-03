@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Bubble from "./Bubble";
 import ChatForm from "./ChatForm";
-
 import { Box } from "@chakra-ui/react";
 
 export default function ChatBot() {

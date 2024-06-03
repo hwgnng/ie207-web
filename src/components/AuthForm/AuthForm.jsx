@@ -15,7 +15,7 @@ const AuthForm = () => {
 
           {isLogin ? <Login /> : <Signup />}
 
-          {/* ---------------- OR -------------- */}
+          {/* ---------------- HOẶC -------------- */}
           <Flex
             alignItems={"center"}
             justifyContent={"center"}

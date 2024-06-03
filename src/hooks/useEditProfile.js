@@ -41,9 +41,9 @@ const useEditProfile = () => {
 			localStorage.setItem("user-info", JSON.stringify(updatedUser));
 			setAuthUser(updatedUser);
 			setUserProfile(updatedUser);
-			showToast("Success", "Profile updated successfully", "success");
+			showToast("Thành công", "Cập nhật hồ sơ thành công!", "success");
 		} catch (error) {
-			showToast("Error", error.message, "error");
+			showToast("Lỗi", error.message, "error");
 		}
 	};
 

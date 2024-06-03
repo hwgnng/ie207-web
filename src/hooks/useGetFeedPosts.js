@@ -33,7 +33,7 @@ const useGetFeedPosts = () => {
 				feedPosts.sort((a, b) => b.createdAt - a.createdAt);
 				setPosts(feedPosts);
 			} catch (error) {
-				showToast("Error", error.message, "error");
+				showToast("Lỗi", error.message, "error");
 			} finally {
 				setIsLoading(false);
 			}

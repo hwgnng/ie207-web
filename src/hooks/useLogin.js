@@ -11,7 +11,7 @@ const useLogin = () => {
 
 	const login = async (inputs) => {
 		if (!inputs.email || !inputs.password) {
-			return showToast("Error", "Please fill all the fields", "error");
+			return showToast("Lỗi", "Vui lòng điền đầy đủ thông tin!", "error");
 		}
 		try {
 			const userCred = await signInWithEmailAndPassword(inputs.email, inputs.password);
@@ -23,7 +23,7 @@ const useLogin = () => {
 				loginUser(docSnap.data());
 			}
 		} catch (error) {
-			showToast("Error", error.message, "error");
+			showToast("Lỗi", error.message, "error");
 		}
 	};
 

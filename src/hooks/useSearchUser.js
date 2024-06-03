@@ -15,13 +15,13 @@ const useSearchUser = () => {
 			const q = query(collection(firestore, "users"), where("username", "==", username));
 
 			const querySnapshot = await getDocs(q);
-			if (querySnapshot.empty) return showToast("Error", "User not found", "error");
+			if (querySnapshot.empty) return showToast("Lỗi", "Không tìm thấy người dùng!", "error");
 
 			querySnapshot.forEach((doc) => {
 				setUser(doc.data());
 			});
 		} catch (error) {
-			showToast("Error", error.message, "error");
+			showToast("Lỗi", error.message, "error");
 			setUser(null);
 		} finally {
 			setIsLoading(false);

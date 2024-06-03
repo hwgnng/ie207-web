@@ -13,7 +13,7 @@ const useLikePost = (post) => {
 
 	const handleLikePost = async () => {
 		if (isUpdating) return;
-		if (!authUser) return showToast("Error", "You must be logged in to like a post", "error");
+		if (!authUser) return showToast("Lỗi", "Bạn phải đăng nhập để thích bài viết này!", "error");
 		setIsUpdating(true);
 
 		try {
@@ -25,7 +25,7 @@ const useLikePost = (post) => {
 			setIsLiked(!isLiked);
 			isLiked ? setLikes(likes - 1) : setLikes(likes + 1);
 		} catch (error) {
-			showToast("Error", error.message, "error");
+			showToast("Lỗi", error.message, "error");
 		} finally {
 			setIsUpdating(false);
 		}

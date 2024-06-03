@@ -11,7 +11,7 @@ const useSignUpWithEmailAndPassword = () => {
 
 	const signup = async (inputs) => {
 		if (!inputs.email || !inputs.password || !inputs.username || !inputs.fullName) {
-			showToast("Error", "Please fill all the fields", "error");
+			showToast("Lỗi", "Vui lòng điền đầy đủ thông tin!", "error");
 			return;
 		}
 
@@ -21,14 +21,14 @@ const useSignUpWithEmailAndPassword = () => {
 		const querySnapshot = await getDocs(q);
 
 		if (!querySnapshot.empty) {
-			showToast("Error", "Username already exists", "error");
+			showToast("Lỗi", "Username đã tồn tại!", "error");
 			return;
 		}
 
 		try {
 			const newUser = await createUserWithEmailAndPassword(inputs.email, inputs.password);
 			if (!newUser && error) {
-				showToast("Error", error.message, "error");
+				showToast("Lỗi", error.message, "error");
 				return;
 			}
 			if (newUser) {
@@ -49,7 +49,7 @@ const useSignUpWithEmailAndPassword = () => {
 				loginUser(userDoc);
 			}
 		} catch (error) {
-			showToast("Error", error.message, "error");
+			showToast("Lỗi", error.message, "error");
 		}
 	};
 

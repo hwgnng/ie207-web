@@ -29,7 +29,7 @@ const useGetUserPosts = () => {
 				posts.sort((a, b) => b.createdAt - a.createdAt);
 				setPosts(posts);
 			} catch (error) {
-				showToast("Error", error.message, "error");
+				showToast("Lỗi", error.message, "error");
 				setPosts([]);
 			} finally {
 				setIsLoading(false);

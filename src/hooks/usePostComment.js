@@ -13,7 +13,7 @@ const usePostComment = () => {
 
 	const handlePostComment = async (postId, comment) => {
 		if (isCommenting) return;
-		if (!authUser) return showToast("Error", "You must be logged in to comment", "error");
+		if (!authUser) return showToast("Lỗi", "Bạn phải đăng nhập để bình luận bài viết này!", "error");
 		setIsCommenting(true);
 		const newComment = {
 			comment,
