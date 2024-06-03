@@ -31,18 +31,18 @@ const FeedPosts = () => {
           </VStack>
         ))}
 
-      {!isLoading &&
-        posts.length > 0 &&
+      {!isLoading && posts.length > 0 &&
         posts.map((post) => <FeedPost key={post.id} post={post} />)}
+
       {!isLoading && posts.length === 0 && (
-        <>
-          <Text fontSize={"md"} color={"red.400"}>
+        <Flex direction="column" alignItems="center" justifyContent="center" textAlign="center" gap={2} py={10}>
+          <Text fontSize={"md"}>
             Chào mừng bạn đến với UIT Playground!
           </Text>
-          <Text color={"red.400"}>
-            Hãy đăng bài viết mới để mọi người cùng xem nào!!
+          <Text color={"#737373"}>
+            Hãy theo dõi mọi người để khám phá thêm nhiều điều nhé!!
           </Text>
-        </>
+        </Flex>
       )}
     </Container>
   );
